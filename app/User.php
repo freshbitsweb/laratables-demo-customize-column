@@ -35,9 +35,23 @@ class User extends Authenticatable
     public static function laratablesModifyCollection($users)
     {
         return $users->map(function ($user) {
-            $user->salary = "$". number_format($user->salary,2); // $ for currency & 2 thousand separate.
+            $user->salary = "$". number_format($user->salary); // $ for currency
             return $user;
         });
+    }
+
+    /**
+     * Adds the condition for searching the salary if custom/modify for display.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder
+     * @param string search term
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public static function laratablesSearchSalary($query, $searchValue)
+    {
+        if ($searchSalary = filter_var($searchValue, FILTER_SANITIZE_NUMBER_INT)) {
+            return $query->orWhere('salary', 'like', '%'. $searchSalary. '%');
+        }
     }
 
     /**
