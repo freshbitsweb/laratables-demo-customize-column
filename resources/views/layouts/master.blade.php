@@ -21,8 +21,7 @@
                 serverSide: true,
                 ajax: "{{ route('customLaraTable') }}",
                 columns: [
-                    { name: 'first_name' },
-                    { name: 'last_name' },
+                    { name: 'Name', searchable: false },
                     { name: 'start_date' },
                     { name: 'salary' },
                 ],

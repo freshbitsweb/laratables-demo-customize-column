@@ -11,7 +11,7 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
-     * Indicates if the model should be timestampe
+     * Indicates if the model should be timestamp
      *
      * @var bool
      */
@@ -38,5 +38,36 @@ class User extends Authenticatable
             $user->salary = "$". number_format($user->salary,2); // $ for currency & 2 thousand separate.
             return $user;
         });
+    }
+
+    /**
+     * Returns the name column value for datatables.
+     *
+     * @param \App\User
+     * @return string
+     */
+    public static function laratablesCustomName($user)
+    {
+        return $user->first_name . ' ' . $user->last_name;
+    }
+
+    /**
+     * Additional columns to be loaded for datatables.
+     *
+     * @return array
+     */
+    public static function laratablesAdditionalColumns()
+    {
+        return ['first_name', 'last_name'];
+    }
+
+    /**
+     * first_name column should be used for sorting when name column is selected in Datatables.
+     *
+     * @return string
+     */
+    public static function laratablesOrderName()
+    {
+        return 'first_name';
     }
 }
