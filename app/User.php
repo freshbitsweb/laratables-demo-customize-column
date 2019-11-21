@@ -25,4 +25,18 @@ class User extends Authenticatable
     protected $dates = [
         'start_date',
     ];
+
+    /**
+     * Display currency symbol with format in salary column value.
+     *
+     * @param \Illuminate\Support\Collection
+     * @return \Illuminate\Support\Collection
+     */
+    public static function laratablesModifyCollection($users)
+    {
+        return $users->map(function ($user) {
+            $user->salary = "$". number_format($user->salary,2); // $ for currency & 2 thousand separate.
+            return $user;
+        });
+    }
 }
