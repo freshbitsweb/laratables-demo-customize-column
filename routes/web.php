@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'CustomLaraTableController@index');
+Route::get('custom', 'CustomLaraTableController@customLaraTableData')->name('customLaraTable');
