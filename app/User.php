@@ -70,4 +70,14 @@ class User extends Authenticatable
     {
         return 'first_name';
     }
+
+     /**
+     * Additional searchable columns(data merge) to be used for datatables .
+     *
+     * @return array
+     */
+    public static function laratablesSearchableColumns()
+    {
+        return ['first_name', 'last_name'];
+    }
 }
