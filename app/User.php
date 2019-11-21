@@ -55,7 +55,7 @@ class User extends Authenticatable
     }
 
     /**
-     * Returns the name column value for datatables.
+     * Returns the first_name & last_name value in Name column for datatables.
      *
      * @param \App\User
      * @return string
@@ -66,7 +66,7 @@ class User extends Authenticatable
     }
 
     /**
-     * Additional columns to be loaded for datatables.
+     * Additional merged columns to be loaded for datatables.
      *
      * @return array
      */
@@ -76,7 +76,7 @@ class User extends Authenticatable
     }
 
     /**
-     * first_name column should be used for sorting when name column is selected in Datatables.
+     * first_name column should be used for sorting when Name column is selected in Datatables.
      *
      * @return string
      */
@@ -85,8 +85,8 @@ class User extends Authenticatable
         return 'first_name';
     }
 
-     /**
-     * Additional searchable columns(data merge) to be used for datatables .
+    /**
+     * Additional searchable merge columns to be used for datatables .
      *
      * @return array
      */
