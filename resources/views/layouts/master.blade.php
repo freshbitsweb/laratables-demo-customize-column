@@ -21,7 +21,7 @@
                 serverSide: true,
                 ajax: "{{ route('customLaraTable') }}",
                 columns: [
-                    { name: 'Name', searchable: false }, //first_name & last_name column merged
+                    { name: 'Name' }, //first_name & last_name column merged
                     { name: 'start_date' },
                     { name: 'salary' },
                 ],

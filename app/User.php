@@ -86,12 +86,16 @@ class User extends Authenticatable
     }
 
     /**
-     * Additional searchable merge columns to be used for datatables .
+     * Searching the user(column merged) in the query.
      *
-     * @return array
+     * @param \Illuminate\Database\Eloquent\Builder
+     * @param string search term
+     * @param \Illuminate\Database\Eloquent\Builder
      */
-    public static function laratablesSearchableColumns()
+    public static function laratablesSearchName($query, $searchValue)
     {
-        return ['first_name', 'last_name'];
+        return $query->orWhere('first_name', 'like', '%'. $searchValue. '%')
+            ->orWhere('last_name', 'like', '%'. $searchValue. '%')
+        ;
     }
 }
