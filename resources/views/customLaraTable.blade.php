@@ -9,6 +9,8 @@
                     <th>Name</th>
                     <th>Start Date</th>
                     <th>Salary</th>
+                    <th>Action</th>
+                    <th>Action</th
                 </tr>
             </thead>
             <tbody></tbody>

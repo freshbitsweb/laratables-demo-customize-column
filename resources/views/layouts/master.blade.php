@@ -24,6 +24,8 @@
                     { name: 'Name' }, //first_name & last_name column merged
                     { name: 'start_date' },
                     { name: 'salary' },
+                    { name: 'editColumn', orderable: false, searchable:false},
+                    { name: 'deleteColumn', orderable: false, searchable:false}
                 ],
             });
         });

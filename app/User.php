@@ -98,4 +98,28 @@ class User extends Authenticatable
             ->orWhere('last_name', 'like', '%'. $searchValue. '%')
         ;
     }
+
+
+    /**
+     * Returns the editColumn html for datatables.
+     *
+     * @param \App\User
+     * @return string
+    */
+    public static function laratablesCustomEditColumn($user)
+    {
+        return view('edit', compact('user'))->render();
+    }
+
+    /**
+     * Returns the deleteColumn html for datatables.
+     *
+     * @param \App\User
+     * @return string
+    */
+    public static function laratablesCustomDeleteColumn($user)
+    {
+        return view('delete', compact('user'))->render();
+    }
+
 }
