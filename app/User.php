@@ -101,25 +101,13 @@ class User extends Authenticatable
 
 
     /**
-     * Returns the editColumn html for datatables.
+     * Returns the action Column html for datatables.
      *
      * @param \App\User
      * @return string
     */
-    public static function laratablesCustomEditColumn($user)
+    public static function laratablesCustomActionColumn($user)
     {
-        return view('edit', compact('user'))->render();
+        return view('action', compact('user'))->render();
     }
-
-    /**
-     * Returns the deleteColumn html for datatables.
-     *
-     * @param \App\User
-     * @return string
-    */
-    public static function laratablesCustomDeleteColumn($user)
-    {
-        return view('delete', compact('user'))->render();
-    }
-
 }
