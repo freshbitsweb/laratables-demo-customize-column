@@ -29,8 +29,8 @@ class User extends Authenticatable
     /**
      * Display currency symbol with format in salary column value.
      *
-     * @param \Illuminate\Support\Collection
-     * @return \Illuminate\Support\Collection
+     * @param \App\User
+     * @return string
     */
     public static function laratablesSalary($user)
     {
