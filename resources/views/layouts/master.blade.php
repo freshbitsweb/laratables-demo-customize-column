@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Custom LaraTable</title>
+    <title>Custom Laratable</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
 </head>
@@ -17,14 +17,14 @@
     <script src="js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("#custom-lara-table-table").DataTable({
+            $("#custom-laratable").DataTable({
                 serverSide: true,
-                ajax: "{{ route('customLaraTable') }}",
+                ajax: "{{ route('custom_Laratable') }}",
                 columns: [
-                    { name: 'Name' }, //first_name & last_name column merged
+                    { name: 'Name' },
                     { name: 'start_date' },
                     { name: 'salary' },
-                    { name: 'actionColumn', orderable: false, searchable:false},
+                    { name: 'action', orderable: false, searchable:false},
                 ],
             });
         });

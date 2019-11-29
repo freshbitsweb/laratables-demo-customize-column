@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/', 'CustomLaraTableController@index');
-Route::get('custom', 'CustomLaraTableController@customLaraTableData')->name('customLaraTable');
+Route::get('/', 'CustomLaratableController@index');
+Route::get('custom', 'CustomLaratableController@customLaratableData')->name('custom_Laratable');

@@ -14,14 +14,14 @@ class User extends Authenticatable
      * Indicates if the model should be timestamp
      *
      * @var bool
-     */
+    */
     public $timestamps = false;
 
     /**
      * The attributes that should be mutated to dates.
      *
      * @var array
-     */
+    */
     protected $dates = [
         'start_date',
     ];
@@ -31,13 +31,10 @@ class User extends Authenticatable
      *
      * @param \Illuminate\Support\Collection
      * @return \Illuminate\Support\Collection
-     */
-    public static function laratablesModifyCollection($users)
+    */
+    public static function laratablesSalary($user)
     {
-        return $users->map(function ($user) {
-            $user->salary = "$". number_format($user->salary); // $ for currency
-            return $user;
-        });
+        return $user->salary = "$". number_format($user->salary);
     }
 
     /**
@@ -52,6 +49,7 @@ class User extends Authenticatable
         if ($searchSalary = filter_var($searchValue, FILTER_SANITIZE_NUMBER_INT)) {
             return $query->orWhere('salary', 'like', '%'. $searchSalary. '%');
         }
+        return $query;
     }
 
     /**
@@ -62,7 +60,7 @@ class User extends Authenticatable
      */
     public static function laratablesCustomName($user)
     {
-        return $user->first_name . ' ' . $user->last_name;
+        return $user->first_name.' '.$user->last_name;
     }
 
     /**
@@ -97,6 +95,7 @@ class User extends Authenticatable
         return $query->orWhere('first_name', 'like', '%'. $searchValue. '%')
             ->orWhere('last_name', 'like', '%'. $searchValue. '%')
         ;
+        return $query;
     }
 
 
@@ -106,7 +105,7 @@ class User extends Authenticatable
      * @param \App\User
      * @return string
     */
-    public static function laratablesCustomActionColumn($user)
+    public static function laratablesCustomAction($user)
     {
         return view('action', compact('user'))->render();
     }

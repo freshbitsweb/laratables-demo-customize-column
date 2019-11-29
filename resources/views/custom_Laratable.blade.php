@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <table id="custom-lara-table-table" class="table table-bordered table-striped">
+        <table id="custom-laratable" class="table table-bordered table-striped">
             <thead class="thead-dark">
                 <tr>
                     <th>Name</th>
@@ -12,7 +12,6 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody></tbody>
         </table>
     </div>
 

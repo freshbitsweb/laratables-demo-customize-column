@@ -5,17 +5,17 @@ namespace App\Http\Controllers;
 use App\User;
 use Freshbitsweb\Laratables\Laratables;
 
-class CustomLaraTableController extends Controller
+class CustomLaratableController extends Controller
 {
     /**
      * Show Table Header column
      *
      *
      * @return \Illuminate\Http\Response
-     **/
+    **/
     public function index()
     {
-        return view('customLaraTable');
+        return view('custom_Laratable');
     }
 
     /**
@@ -25,7 +25,7 @@ class CustomLaraTableController extends Controller
      * @param Type $var Description
      * @return Json
      **/
-    public function customLaraTableData()
+    public function customLaratableData()
     {
         return Laratables::recordsOf(User::class);
     }
