@@ -89,8 +89,7 @@ class User extends Model
     public static function laratablesSearchName($query, $searchValue)
     {
         return $query->orWhere('first_name', 'like', '%'. $searchValue. '%')
-            ->orWhere('last_name', 'like', '%'. $searchValue. '%')
-        ;
+            ->orWhere('last_name', 'like', '%'. $searchValue. '%');
     }
 
 
