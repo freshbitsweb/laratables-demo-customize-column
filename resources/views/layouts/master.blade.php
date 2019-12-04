@@ -19,7 +19,7 @@
         $(document).ready(function(){
             $("#custom-laratable").DataTable({
                 serverSide: true,
-                ajax: "{{ route('custom_Laratable') }}",
+                ajax: "{{ route('custom_laratable') }}",
                 columns: [
                     { name: 'Name' },
                     { name: 'start_date' },
