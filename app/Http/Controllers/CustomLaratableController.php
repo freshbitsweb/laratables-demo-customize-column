@@ -8,7 +8,7 @@ use Freshbitsweb\Laratables\Laratables;
 class CustomLaratableController extends Controller
 {
     /**
-     * Show Table Header column
+     * Display Home Page.
      *
      * @return \Illuminate\Http\Response
      **/
