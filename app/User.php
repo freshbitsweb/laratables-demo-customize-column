@@ -10,14 +10,14 @@ class User extends Model
      * Indicates if the model should be timestamp
      *
      * @var bool
-    */
+     */
     public $timestamps = false;
 
     /**
      * The attributes that should be mutated to dates.
      *
      * @var array
-    */
+     */
     protected $dates = [
         'start_date',
     ];
@@ -27,10 +27,10 @@ class User extends Model
      *
      * @param \App\User
      * @return string
-    */
+     */
     public static function laratablesSalary($user)
     {
-        return $user->salary = "$". number_format($user->salary);
+        return $user->salary = "$".number_format($user->salary);
     }
 
     /**
@@ -43,8 +43,10 @@ class User extends Model
     public static function laratablesSearchSalary($query, $searchValue)
     {
         if ($searchSalary = filter_var($searchValue, FILTER_SANITIZE_NUMBER_INT)) {
-            return $query->orWhere('salary', 'like', '%'. $searchSalary. '%');
+            return $query->orWhere('salary', 'like', '%'. $searchSalary. '%')
+	    ;
         }
+
         return $query;
     }
 
@@ -89,16 +91,16 @@ class User extends Model
     public static function laratablesSearchName($query, $searchValue)
     {
         return $query->orWhere('first_name', 'like', '%'. $searchValue. '%')
-            ->orWhere('last_name', 'like', '%'. $searchValue. '%');
+            ->orWhere('last_name', 'like', '%'. $searchValue. '%')
+	    ;
     }
-
 
     /**
      * Returns the action Column html for datatables.
      *
      * @param \App\User
      * @return string
-    */
+     */
     public static function laratablesCustomAction($user)
     {
         return view('action', compact('user'))->render();

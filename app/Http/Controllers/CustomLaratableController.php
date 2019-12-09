@@ -10,9 +10,8 @@ class CustomLaratableController extends Controller
     /**
      * Show Table Header column
      *
-     *
      * @return \Illuminate\Http\Response
-    **/
+     **/
     public function index()
     {
         return view('custom_laratable');
@@ -21,8 +20,6 @@ class CustomLaratableController extends Controller
     /**
      * return data of the custom datatables.
      *
-     *
-     * @param Type $var Description
      * @return Json
      **/
     public function customLaratableData()
