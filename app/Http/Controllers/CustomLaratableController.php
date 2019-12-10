@@ -18,7 +18,7 @@ class CustomLaratableController extends Controller
     }
 
     /**
-     * return data of the custom datatables.
+     * Returns data of the custom datatables.
      *
      * @return Illuminate\Http\JsonResponse
      **/
