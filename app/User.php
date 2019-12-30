@@ -104,4 +104,30 @@ class User extends Model
     {
         return view('action', compact('user'))->render();
     }
+
+    /**
+     * Modify series column collection.
+     *
+     * @param \Illuminate\Support\Collection
+     * @return \Illuminate\Support\Collection
+     **/
+    public static function laratablesModifyCollection($users)
+    {
+        return $users->map(function ($user, $key) {
+            $user->series = $key+1+request()->input('start');
+            return $user;
+        });
+    }
+
+     /**
+     * Display Numeric value.
+     *
+     * @param \App\User $user
+     * @return string
+     */
+    public static function laratablesCustomSeries($user)
+    {
+        return $user->series;
+    }
+
 }

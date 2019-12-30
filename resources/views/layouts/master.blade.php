@@ -25,6 +25,7 @@
                     { name: 'start_date' },
                     { name: 'salary' },
                     { name: 'action', orderable: false, searchable:false},
+                    { name: 'series', orderable: false, searchable:false},
                 ],
             });
         });

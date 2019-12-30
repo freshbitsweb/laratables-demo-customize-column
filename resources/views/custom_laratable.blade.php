@@ -10,6 +10,7 @@
                     <th>Start Date</th>
                     <th>Salary</th>
                     <th>Action</th>
+                    <th>Series</th>
                 </tr>
             </thead>
         </table>
