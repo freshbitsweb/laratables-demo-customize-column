@@ -120,11 +120,11 @@ class User extends Model
     }
 
     /**
-    * Returns the custom column serial number value for table.
-    *
-    * @param \App\User $user
-    * @return string
-    */
+     * Returns the custom column serial number value for table.
+     *
+     * @param \App\User $user
+     * @return string
+     **/
     public static function laratablesCustomSerialNo($user)
     {
         return $user->serial_no;
