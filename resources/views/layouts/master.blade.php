@@ -20,13 +20,15 @@
             $("#custom-laratable").DataTable({
                 serverSide: true,
                 ajax: "{{ route('custom_laratable') }}",
+                order: [[1, "asc"]],
                 columns: [
+                    { name: 'serial_no', orderable: false, searchable: false},
                     { name: 'Name' },
                     { name: 'start_date' },
                     { name: 'salary' },
-                    { name: 'action', orderable: false, searchable:false},
-                    { name: 'series', orderable: false, searchable:false},
+                    { name: 'action', orderable: false, searchable: false},
                 ],
+
             });
         });
     </script>
